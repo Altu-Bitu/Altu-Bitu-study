@@ -40,7 +40,7 @@ int main() {
     //연산
 //    sort(a.begin(), a.end(), cmpAdv);
     for (int i = 0; i < n; i++)
-        if(bubbleSort(arr[i]) > 0)
+        if(bubbleSort(arr[i]) == 0)
             cnt2++;
 
 
