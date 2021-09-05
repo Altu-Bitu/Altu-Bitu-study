@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/banya/CLionProjects/untitled1/main.cpp
+C:/Users/banya/CLionProjects/untitled1/0903- sort/1316.cpp
 iostream
+-
+vector
+-
+algorithm
 -
 
