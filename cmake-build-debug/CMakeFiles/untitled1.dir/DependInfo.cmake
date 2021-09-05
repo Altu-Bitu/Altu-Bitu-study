@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/banya/CLionProjects/untitled1/0903- sort/1316.cpp" "C:/Users/banya/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/0903-_sort/1316.cpp.obj"
+  "C:/Users/banya/CLionProjects/untitled1/0903- sort/13458.cpp" "C:/Users/banya/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/0903-_sort/13458.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 
