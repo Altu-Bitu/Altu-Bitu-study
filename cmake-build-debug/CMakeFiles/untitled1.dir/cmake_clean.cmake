@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/untitled1.dir/0903-_sort/13458.cpp.obj"
-  "untitled1.exe"
-  "untitled1.exe.manifest"
-  "untitled1.lib"
+  "CMakeFiles/untitled1.dir/0903-_sort/11399.cpp.o"
+  "untitled1"
   "untitled1.pdb"
 )
 

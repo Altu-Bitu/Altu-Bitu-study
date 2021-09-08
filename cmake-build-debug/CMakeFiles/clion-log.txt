@@ -1,10 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - NMake Makefiles" C:\Users\banya\CLionProjects\untitled1
-CMake Error at CMakeLists.txt:7 (add_executable):
-  The target name "untitled1/9�썡" is reserved or not valid for certain CMake
-  features, such as generator expressions, and may result in undefined
-  behavior.
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/Users/banya/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeOutput.log".
-See also "C:/Users/banya/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeError.log".
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /Users/banye/Altu-Bitu-study
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/banye/Altu-Bitu-study/cmake-build-debug
