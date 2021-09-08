@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/banye/Altu-Bitu-study/0903- sort/11399.cpp" "/Users/banye/Altu-Bitu-study/cmake-build-debug/CMakeFiles/untitled1.dir/0903-_sort/11399.cpp.o"
+  "/Users/banye/Altu-Bitu-study/0903- sort/1946.cpp" "/Users/banye/Altu-Bitu-study/cmake-build-debug/CMakeFiles/untitled1.dir/0903-_sort/1946.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
