@@ -36,7 +36,9 @@ void bubbleSort(int n) {
 int main() {
     int n;
     int cnt2;
+
     cnt2 = 0;
+
     //입력
     cin >> n;
     arr.assign(n, "");
@@ -47,14 +49,15 @@ int main() {
     //연산
 //    sort(a.begin(), a.end(), cmpAdv);
     bubbleSort(n);
-    for (int i = 0 ; i < n ; i++){
-        for (int j=0;j<i;j++){
-            int n = atoi(arr[i].c_str());
+    for (int i =1 ; i < n+1 ; i++) {
+        for (int j = 0; j < i; j++) {
+            int n = atoi(arr[j].c_str());
             cnt2 = cnt2 + n;
+            cout << n << " ";
         }
+
     }
 
-
-    cout << cnt2 << " " ;
+    cout << cnt2;
 
 }
