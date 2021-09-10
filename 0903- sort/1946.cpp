@@ -1,3 +1,18 @@
+
+
+//
+// Created by banya on 2021-09-08.
+//
+
+//
+// Created by 반예원 on 2021/09/08.
+//
+
+//
+// Created by banya on 2021-09-05.
+//
+
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -24,31 +39,30 @@ int main() {
     {
         int n;
         int cnt = 0;
-        int bestScore;
+        int bestScore = 0;
         cin >> n;
         vector<info> a;
         a.assign(n,{});
 
         for (int i = 0; i < n; i++)
-            cin >> a[i].x1 >> a[i].x2;
+        cin >> a[i].x1 >> a[i].x2;
 
-        sort(a.begin(), a.end(),cmpAdv);
+    sort(a.begin(), a.end(),cmpAdv);
 
 
-        bestScore = a[0].x2;
-        for (int i = 1; i < n; i++){
+    bestScore = a[0].x2;
+    for (int i = 1; i < n; i++){
 
-            if(a[i].x2 < bestScore) {
-                bestScore = a[i].x2;
-                cnt++;
-            }
+        if(a[i].x2 < bestScore) {
+            bestScore = a[i].x2;
+            cnt++;
         }
-//        if(n2 == 1){
-//            cout << "\n";
-//            cout << cnt+1;}
-//        else
-//            cout << cnt+1;
-    cout << cnt+1 << "\n";
+            }
+    if(n2 == 1){
+        cout << "\n";
+        cout << cnt+1;}
+    else
+        cout << cnt+1;
     }
 
 }
