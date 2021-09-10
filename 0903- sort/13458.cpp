@@ -10,7 +10,6 @@ using namespace std;
 vector<int> arr;
 
 
-//향상된 버블 정렬
 int bubbleSortAdv(int n,int b,int c ){
     int cnt = 0;
 
@@ -36,8 +35,5 @@ int main() {
         cin >> arr[i];
     cin >> b >> c;
 
-    //연산
-    //bubbleSort(n);
-
-    cout <<  bubbleSortAdv(n,b,c) << '\n';
+    cout <<  bubbleSortAdv(n,b,c) ;
 }
