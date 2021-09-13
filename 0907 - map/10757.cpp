@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-
+#include<string>
 #include <math.h>
 #include <map>
 using namespace std;
@@ -18,6 +18,8 @@ int main(){
     int a = 0;
     int ans=0;
     int ans2=0;
+    string result;
+
     n4="";
 
 
@@ -41,17 +43,21 @@ int main(){
         n=n3+n;
 
     }
+    int carry=0;
 
-    for(int i=large-1;i>-1;i--){
+    while (n.size()!=0 && n2.size() !=0)
+    {
+        int aback = n.back() - '0'; //문자열에서 맨마지막 문자를 숫자로 바꿈
+        int bback = n2.back() - '0'; //마찬가지
 
-        ans= n[i]+n2[i];
-        if(ans>10){
-            ans=ans+(i*10);
-            ans2=ans2+ans;}
-        else
-            ans=ans+(i*10);
-            ans2=ans2+ans;
+        int remain = (carry + aback+bback) % 10;
+        carry = (carry+aback+bback)/10;
+        result = (char)(remain+"0")+result;
+        n.pop_back();
+        n2.pop_back();
 
     }
-    cout << ans2;
+    if(carry) //마지막 자리 까지 다더했는데 캐리가 있으면 캐리를 맨앞에 붙여줘야함.
+        result = (char)(carry+'0') + result;
+    cout << result << endl;
 }
