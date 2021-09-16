@@ -1,4 +1,8 @@
 //
+// Created by banya on 2021-09-13.
+//
+
+//
 // Created by banya on 2021-09-09.
 //
 
@@ -12,6 +16,9 @@ int main(){
     int n1, n2,n3 ;
     int m1, m2,m3 ;
     int k;
+
+    map<string, int> name; //이름이 입력되면 번호 출력
+    map<int, string> number; //번호가 입력되면 이름을 출력
 
     string ans;
     cin >> n1 >> n2 >> n3;
