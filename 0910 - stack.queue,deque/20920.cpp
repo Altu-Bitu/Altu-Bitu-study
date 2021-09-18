@@ -12,8 +12,7 @@
 using namespace std;
 
 bool cmp(const pair<string,int>& a, const pair<string,int>& b) {
-//    if(a.second>b.second)
-//        return  a.second>b.second;
+
     if( a.second > b.second)
        return a.second > b.second;
     if (a.first.size() > b.first.size())
