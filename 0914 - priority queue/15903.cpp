@@ -10,10 +10,10 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-    int n, n2,n3;
-    int ans =0;
-    int fir,sec,ca;
-    priority_queue<int,vector<int>,greater<int>> pq;
+    long long n, n2,n3;
+    long long ans =0;
+    long long fir,sec,ca;
+    priority_queue<long long ,vector<long long >,greater<long long>> pq;
     cin >> n >>n2;
 
     for(int i=0;i<n;i++) {
