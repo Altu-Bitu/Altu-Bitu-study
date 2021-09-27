@@ -18,10 +18,12 @@ int main(){
         v.push_back(make_pair(a,b));
     }
     for(int i=0;i<n;i++){
+//        sum = sum+v[i].second;
+//        if(v[i].first!=1){
+//        n2 = v[i].first;
+//        i=i+n2;}
 
-    while(2--){
-
-    }
+    while(2--)
 
     }
     cout << sum ;
