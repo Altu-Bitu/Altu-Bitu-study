@@ -9,4 +9,4 @@ add_executable(CMAKE_ROOT
        # "0903- sort/13458.cpp"
         #"0903- sort/11399.cpp"
        # "0910 - stack.queue,deque/10866.cpp"
-       "0917 - number theory/11050.cpp")
+       "0921 - brute force/20055.cpp")
