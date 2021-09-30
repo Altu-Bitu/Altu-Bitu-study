@@ -9,7 +9,6 @@ using namespace std;
 const int SIZE = 6;
 int num[SIZE];
 int num2[SIZE];
-bool check[SIZE+100];
 bool num_chk[10001];
 vector<int> arr;
 int n,m;
@@ -23,17 +22,8 @@ void backtracking(int cnt){
         return;
     }
     for(int i=0;i<arr.size();i++){
-        if(!check[num2[i]]){
             num[cnt] = arr[i];
             backtracking(cnt+1);
-
-        }
-
-
-
-
-        else
-            continue;
 
     }
 
@@ -56,7 +46,4 @@ int main(){
 
 
 
-}//
-// Created by banya on 2021-09-30.c++
-//
-
+}
