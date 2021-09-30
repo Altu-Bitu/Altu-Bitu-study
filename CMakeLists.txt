@@ -8,5 +8,5 @@ add_executable(CMAKE_ROOT
         #"0903- sort/13458.cpp"
        # "0903- sort/13458.cpp"
         #"0903- sort/11399.cpp"
-       "0924 - backtracking/15665.cpp"
+       "0924 - backtracking/1759.cpp"
         )

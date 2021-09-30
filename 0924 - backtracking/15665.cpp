@@ -3,37 +3,60 @@
 //
 
 #include <iostream>
-
+#include <algorithm>
+#include <vector>
 using namespace std;
-const int SIZE = 8;
+const int SIZE = 6;
 int num[SIZE];
-bool check[SIZE+1];
+int num2[SIZE];
+bool check[SIZE+100];
+bool num_chk[10001];
+vector<int> arr;
 int n,m;
+
 void backtracking(int cnt){
     if(cnt == m){
+
         for(int i=0;i<cnt;i++)
-            cout <<num[i] << " ";
+            cout << num[i] << " ";
         cout << "\n";
         return;
     }
-
-    for(int i=1;i<=n;i++){
-        if(!check[i]){
-
-            num[cnt] = i;
-            check[i]= true;
+    for(int i=0;i<arr.size();i++){
+        if(!check[num2[i]]){
+            num[cnt] = arr[i];
             backtracking(cnt+1);
-            check[i]=false;}
+
+        }
+
+
+
+
+        else
+            continue;
+
     }
 
 }
 int main(){
 
     cin >> n >> m;
+    for(int i=0;i<n;i++){
+        int a;
+        cin>>a;
+        if(!num_chk[a]){
+            arr.push_back(a);
+            num_chk[a]=true;
+        }
+    }
+    sort(arr.begin(), arr.end());
 
     backtracking(0);
 
+
+
+
 }//
-// Created by banya on 2021-09-30.
+// Created by banya on 2021-09-30.c++
 //
 
