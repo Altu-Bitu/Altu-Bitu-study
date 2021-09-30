@@ -4,19 +4,40 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <set>
+#include <string>
 using namespace std;
 const int SIZE = 8;
-char num[SIZE];
+char num[10];
 
 vector<char> arr;
-
-bool check[SIZE+1];
+set<string> v;
+bool check[1000];
 int n,m;
 void backtracking(int cnt){
     if(cnt == n){
-        for(int i=0;i<cnt;i++)
-            cout <<num[i] << " ";
-        cout << "\n";
+        char num2[10];
+        string ans;
+
+        int s =0;
+        for(int i=0;i<n;i++) {
+            if (num[i] == 'a' || num[i] == 'e' || num[i] == 'i' || num[i] == 'o' || num[i] == 'u')
+                s++;
+        }
+        if(s>=1){
+            for(int i=0;i<n;i++)
+            num2[i] = num[i];
+
+            sort(num2,num2+n);
+            for(int i=0;i<n;i++)
+                ans=ans+num2[i] ;
+            if(ans.size()==n)
+                v.insert(ans);
+
+        }
+
+
         return;
     }
 
@@ -37,11 +58,11 @@ int main(){
         cin >> x;
         arr.push_back(x);
     }
+    sort(arr.begin(), arr.end());
 
-    for(int i=0;i<m;i++){
-        cout << arr[i];
-    }
     backtracking(0);
+    for (auto iter = v.begin(); iter != v.end(); iter++)
+        cout << *iter << '\n';
 
 }
 
