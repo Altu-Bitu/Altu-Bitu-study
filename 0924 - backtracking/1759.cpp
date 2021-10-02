@@ -17,7 +17,7 @@ bool check[1000];
 int n,m;
 void backtracking(int cnt){
     if(cnt == n){
-        char num2[10];
+        char num2[size(num)];
         string ans;
 
         int s =0;
@@ -32,13 +32,14 @@ void backtracking(int cnt){
             sort(num2,num2+n);
             for(int i=0;i<n;i++)
                 ans=ans+num2[i] ;
-            if(ans.size()==n)
+
                 v.insert(ans);
 
+
+            return;
         }
 
 
-        return;
     }
 
     for(int i=0;i<m;i++){
