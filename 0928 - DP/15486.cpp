@@ -9,14 +9,16 @@ int knapsack_1(int n, vector<pair<int,int>> &s) {
     vector<int> dp( 1500010, 0);
     int ans;
     int cmax = 0;
-    for (int i = 1; i <= n + 1; i++)
+    for (int i = 1; i <= n; i++)
     {
         cmax = max(cmax, dp[i]);
         if (i + s[i].first > n + 1)
             continue;
 
         dp[i + s[i].first] = max(cmax + s[i].second, dp[i + s[i].first]);
+    cout << cmax <<"\n";
     }
+
     ans = cmax;
 
 
