@@ -1,57 +1,57 @@
 #include <iostream>
-#include <string>
-#include <deque>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
-//k개의 수 지워서 큰 수 만드는 함수
-string makeBigNum(string number, int l, int k) {
-    deque<int> dq; //deque 선언
-    int cnt = 0;
-    for (int i = 0; i < l; i++) { //스트링 길이만큼 반복
-        while (!dq.empty() && dq.front() < number[i] - '0' && cnt < k) { //이번 입력이 dq.front()보다 크면서 아직 K개를 지우지 않았다면
-            dq.pop_front(); //dq.front() 지우기
-            cnt++; //지워진 숫자 증가
-        }
-        dq.push_front(number[i] - '0'); //이번 입력 삽입
-    }
-    while (dq.size() > (l - k)) //충분히 지우지 못했다면 앞에서부터(자릿수가 작은 숫자) 지우기
-        dq.pop_front(); //dq.size()가 l-k보다 크면, 삭제
+bool cmp(const int &a, const int &b) { // 정렬 cmp 선언
+    if (a % 10 == 0 && b % 10 == 0) //둘 다 나누어 떨어지면 짧은 것부터
+        return a < b; // 짧은것 우선으로
+    return a % 10 == 0; //나누어떨어지는 게 먼저 오도록 정렬
+}
 
-    string answer = "";
-    while (!dq.empty()) { //큰 자릿수부터 정답에 추가
-        answer += (dq.back() + '0'); //string 리턴위해 dq.back()+"0"하여 char형으로 변환
-        dq.pop_back(); //추가후 삭제
+//롤케이크 자르는 함수
+int cutCakeRoll(int n, int m, vector<int> &cake) {
+    int ans = 0;
+
+    for (int i = 0; i < n; i++) {//케이크 갯수만큼 반복
+        int cut = cake[i] / 10; //자르는 횟수
+        if (cake[i] % 10 == 0) //나머지가 0이면
+            cut--; //자르는 횟수 감소
+        if (cut <= m) { //모두 자르기 가능한 경우
+            m -= cut;
+            ans += cake[i] / 10;
+        } else { //다 못자르는 경우 -> 한 번 자를 때 1개씩 나오므로 m 더함
+            ans += m; //자를기회가 m번 남은 것이므로 +m을 한다/
+            break;
+        }
     }
-    return answer;
+
+    return ans;
 }
 
 /**
- * k개의 수를 지워나가면서 바로바로 큰 수를 만들어나가자
- * 0번 인덱스부터 차례로 검사해서 일단 큰 수에 포함했다가, 커지는 값이 나오면 그 전의 수를 모두 지운다
- * 마지막으로 남은 수열이 원하는 정답인 큰 수가 된다
- * ex) 1924 에서 2개를 지워서 큰 수를 만들어야 한다면
- *     1->9로 넘어가는 순간 1이 지워짐 -> 9는 큰 수에 포함
- *     2->4로 넘어가는 순간 2가 지워짐 -> 4는 큰 수에 포함
- *     94가 최종 정답
- *
- * 이러한 그리디적 풀이가 가능한 이유 -> number의 순서가 고정되어 있기 때문!
- * !주의! 커지는 값이 나와도, 이미 k번 수를 지웠다면 더 이상 지우면 안됨
- * !주의! 마지막까지 검사했는데 k번 지우지 못했다면 마지막 값들을 지워서 k번을 채움
+ * 길이가 10인 롤케이크 개수의 최댓값을 구하는 문제
+ * 길이가 10이상인 롤케이크를 잘라보자. 기본적으로 한 번 자르면 1개씩 나오게 된다.
+ * 이때, 10으로 나누어 떨어지는 길이를 먼저 잘라야 한다. (ex. 15를 한 번 자르면 1개가 생기지만, 20을 한 번 자르면 2개가 생김)
+ * 10으로 나누어 떨어지는 길이 중에서도, 작은 길이를 먼저 잘라야 한다. (ex. 20을 한 번 자르면 2개가 생기지만, 30을 한 번 자르면 1개가 생김)
+ * 10으로 나누어 떨어지지 않는 다른 수끼리는 순서가 상관 없다.
  */
 
-string solution(string number, int k) {
-    return makeBigNum(number, number.length(), k);
-}
-
 int main() {
-    string number = "1924";
-    int k = 2;
+    int n, m;
 
-    //연산 &출력
-    cout << number[1]-'0';
-    cout << number[1]+'0';
-    cout << solution(number, k);
+    //입력
+    cin >> n >> m; // 롤케이크 갯수와 최대횟수
+    vector<int> cake(n, 0); //케이크 담을 배열
+    for (int i = 0; i < n; i++) //입력 받기
+        cin >> cake[i];
+
+    //연산  => 10으로 나누어 떨어지는 거 순서 먼저
+    sort(cake.begin(), cake.end(), cmp);
+
+    //연산 & 출력
+    cout << cutCakeRoll(n, m, cake) << '\n';
 
     return 0;
 }
