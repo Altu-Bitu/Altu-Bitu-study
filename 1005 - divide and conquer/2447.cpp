@@ -8,9 +8,9 @@
 using namespace std;
 
 vector<vector<int>> v;
-//분할 정복으로 곱셈을 하는 함수
+
 void divide(int a,int left, int right) {
-    //Conquer : B가 1인가?
+
     int sub=1;
 
     sub = a / 3;
