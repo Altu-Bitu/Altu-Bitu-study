@@ -24,14 +24,18 @@ void divide(int n, int k) {
     else{
         swich[v[i].second] = !swich[v[i].second];
         for(int j=1;j<=n;j++){
-
+            if(v[i].second-j < 0 || v[i].second+j > swich.size())
+                break;
             if (swich[v[i].second-j] == swich[v[i].second+j] )//
             {
                 swich[v[i].second-j] = !swich[v[i].second-j];
                 swich[v[i].second+j] = !swich[v[i].second+j];
+
             }
-        else
-            break;}
+            else
+                break;
+
+        }
     }
 }
 }
@@ -53,8 +57,13 @@ int main() {
 
      divide(n, k);
 
+
     //출력
-    for (int i = 1; i <= n; i++) {
-        cout << swich[i] << " ";
+    for (int i = 1; i <= n; i++)
+    {   cout << swich[i] << " ";
+        if(i>=20  && i%20==0)
+            cout << "\n";
+
     }
+    return 0;
 }
