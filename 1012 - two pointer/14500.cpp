@@ -15,7 +15,7 @@ int dc[4] = {0, 0, -1, 1};
 //board[row][col]을 가운데로 하는 +모양 만들기
 int horn(int row, int col) {
     int cnt = 0, min_block = 1001, sum = board[row][col];
-
+    //변수 선언
     for (int i = 0; i < 4; i++) {
         int nr = row + dr[i];
         int nc = col + dc[i];
