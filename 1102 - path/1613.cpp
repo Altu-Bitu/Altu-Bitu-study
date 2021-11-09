@@ -7,6 +7,8 @@
 using namespace std;
 
 vector<vector<int>> history(402, vector<int>(402,0));
+
+//플로이드 와샬 소스코드 사용
 void solve(int n){
     int i,j,k;
     for (k = 1; k <= n; k++)
@@ -22,7 +24,7 @@ int main(){
 
     for(int i=0;i<b;i++){
         cin >> d >> e;
-        history[d][e] = -1;
+        history[d][e] = -1; //초기화 설정
         history[e][d] = -1;
     }
     solve(a);
