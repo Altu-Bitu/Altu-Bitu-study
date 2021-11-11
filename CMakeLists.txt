@@ -8,5 +8,4 @@ add_executable(CMAKE_ROOT
         #"0903- sort/13458.cpp"
        # "0903- sort/13458.cpp"
         #"0903- sort/11399.cpp"
-       "1005 - divide and conquer/1244.cpp"
-        )
+        "1102 - path/1613.cpp" "1102 - path/11657.cpp" "1102 - path/11404.cpp")

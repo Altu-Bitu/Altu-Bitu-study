@@ -17,7 +17,7 @@ void maxConsul(int n, vector<ci> &consulting, int start, int sum) {
         maxConsul(n, consulting, i + consulting[i].first, sum + consulting[i].second);
     // start 값은 i번째의 날 + 상담할 수 있는 기간, 지금까지의 이익은 sum = sum + 상담날짜의 이익 더하기
 }
-
+ㄴ
 /**
  * [퇴사]
  * 상담을 적절히 했을 때, 얻을 수 있는 최대 수익을 구하는 프로그램
