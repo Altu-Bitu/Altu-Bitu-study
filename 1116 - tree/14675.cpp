@@ -11,9 +11,9 @@ using namespace std;
 string isTrue(int t, int k, vector<vector<int>> &tree) {
     if (t == 2) // 단절선인지에대한 질의 확인
         return "yes"; //yes 리턴
-    if (tree[k].size() >= 2)
-        return "yes";
-    return "no";
+    if (tree[k].size() >= 2) //트리의 사이즈 2개 이상이라면
+        return "yes"; //단절점 으로 리턴
+    return "no"; //해당사항없다면 리턴
 }
 
 /**
@@ -30,9 +30,9 @@ int main() {
     //입력
     cin >> n; //트리의 정점 개수 N 입력 받기
     vector<vector<int>> tree(n + 1, vector<int>(0)); // 2차원 벡터 초기화
-    for (int i = 0; i < n - 1; i++) {
-        cin >> a >> b;
-        tree[a].push_back(b);
+    for (int i = 0; i < n - 1; i++) { // N-1개 줄에 걸쳐 간선의 정보 a,b
+        cin >> a >> b; // a,b 입력 받기
+        tree[a].push_back(b); // 트리 저장
         tree[b].push_back(a);
     }
     cin >> q;
